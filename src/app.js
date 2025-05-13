@@ -17,9 +17,13 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
-app.use(helmet());
+app.use(helmet({
+    crossOriginResourcePolicy: false,
+}));
 app.use(hpp());
-app.use(limiter)
+app.use(limiter);
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
 
 app.use(localeMiddleware);
 app.use("/api", routes)
