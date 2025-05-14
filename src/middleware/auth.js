@@ -1,6 +1,7 @@
 const jwt = require('jsonwebtoken');
 const { ForbiddenError, UnauthorizedError } = require("./error");
 const User = require("../models/user");
+const {UNAUTHORIZED} = require("../constants/status-codes")
 
 module.exports.auth = function (_permittedRoles) {
 
