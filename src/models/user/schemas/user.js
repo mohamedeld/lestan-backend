@@ -19,7 +19,7 @@ const userSchema = new Schema({
     },
     role: {
         type: String,
-        default: roles.customer,
+        default: roles.student,
         enum: Object.values(roles)
     },
     attacks: [{type : mongoose.Types.ObjectId, ref : ATTACK}],
